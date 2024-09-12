@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +13,6 @@ body {
     padding: 0;
 }
 
-/* Cores de fundo e estilo de texto */
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -44,7 +42,6 @@ p {
     color: #555;
 }
 
-/* Header */
 header {
     background-color: #f8f8f8;
     padding: 20px;
@@ -63,14 +60,12 @@ header {
 
 .profile-image {
     margin-right: 20px;
-    /* Espaçamento entre a imagem e o texto */
 }
 
 .profile-image img {
     max-height: 50vh;
     border-radius: 5px;
     border: 3px solid #DAA520;
-    /* Dourado */
 }
 
 .profile-text p {
@@ -92,15 +87,40 @@ header {
 
 .social-icons a:hover {
     color: #DAA520;
-    /* Dourado */
 }
 
-/* Seções */
 .section {
     margin-bottom: 40px;
 }
 
-/* Galeria de Imagens */
+.image-container {
+    position: relative;
+    width: 30%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-icon {
+    font-size: 3rem;
+    color: #DAA520;
+    animation: rotate 2s linear infinite;
+}
+
+.image-container img {
+    display: none;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+.image-container img.loaded {
+    display: block;
+    opacity: 1;
+}
+
 .gallery-images {
     display: flex;
     justify-content: space-around;
@@ -108,19 +128,17 @@ header {
 }
 
 .gallery-images img {
-    width: 30%;
+    width: 100%;
     border-radius: 5px;
-    margin: 10px;
+    margin: 5px;
     transition: transform 0.3s ease;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    /* Sombra suave */
 }
 
 .gallery-images img:hover {
     transform: scale(1.05);
 }
 
-/* Footer */
 footer {
     background-color: #DAA520;
     color: #fff;
@@ -128,10 +146,18 @@ footer {
     padding: 10px;
 }
 
-/* Animação Fade-In */
 .fade-in {
     opacity: 0;
     animation: fadeInAnimation 1.5s forwards;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fadeInAnimation {
@@ -140,7 +166,6 @@ footer {
     }
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -168,7 +193,4 @@ footer {
         max-width: 100%;
     }
 
-    .gallery-images img {
-        width: 100%;
-    }
 }
